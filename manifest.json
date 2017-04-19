@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+
+  "name": "Max-Width 900px",
+  "description": "Press Ctrl+Shift+Y or push the toolbar button to add the CSS options 'max-width: 900px' and 'margin: auto' to the current page's <body> tag.",
+  "version": "1.0",
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "max-width: 900px"
+  },
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y",
+        "chromeos": "Ctrl+Shift+Y",
+        "linux": "Ctrl+Shift+Y"
+      }
+    }
+  },
+
+  "permissions": [
+    "activeTab",
+    "commands"
+  ]
+}
